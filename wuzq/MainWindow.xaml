@@ -1,0 +1,49 @@
+﻿<Window x:Class="wuzq.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wuzq"
+        mc:Ignorable="d"
+        Title="五子棋" Height="700" Width="900">
+    <Grid Margin="0,0,2,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label" Content="模式选择" HorizontalAlignment="Left" Height="47" Margin="674,10,0,0" VerticalAlignment="Top" Width="176" FontSize="24" Grid.RowSpan="2"/>
+        <RadioButton x:Name="人机对战" Content="人机对战" HorizontalAlignment="Left" Margin="674,57,0,0" VerticalAlignment="Top" Height="34" Width="206" FontSize="24" Grid.RowSpan="2" Click="人机对战_Click"/>
+        <RadioButton x:Name="internet" Content="网络对战" HorizontalAlignment="Left" Margin="674,135,0,0" VerticalAlignment="Top" Height="34" Width="206" FontSize="24" Grid.RowSpan="2" Click="internet_Click"/>
+        <RadioButton x:Name="people_people" Content="双人对战" HorizontalAlignment="Left" Margin="674,96,0,0" VerticalAlignment="Top" Height="34" Width="206" FontSize="24" Grid.RowSpan="2" Click="people_people_Click"/>
+        <Button x:Name="start" Content="重新开始" HorizontalAlignment="Left" Height="42" Margin="698,517,0,0" VerticalAlignment="Top" Width="152" FontSize="22" Grid.RowSpan="2" Click="start_Click"/>
+        <Button x:Name="quit" Content="退出" HorizontalAlignment="Left" Height="42" Margin="698,586,0,0" VerticalAlignment="Top" Width="152" FontSize="22" Grid.RowSpan="2" Click="quit_Click_1"/>
+        <Canvas HorizontalAlignment="Left" Height="100" Margin="272,361,0,0" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
+        <Canvas x:Name="chessBoard" HorizontalAlignment="Left" Height="669" VerticalAlignment="Top" Width="669" MouseDown="chessBoard_MouseDown" MouseMove="chessBoard_MouseMove" Grid.RowSpan="2">
+            <Image x:Name="image" Height="669" Width="669" Source="bin/background.jpg"/>
+        </Canvas>
+        <GroupBox x:Name="groupBox" Header="网络参数" HorizontalAlignment="Left" Height="143" Margin="674,246,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="206" FontSize="20">
+            <Canvas HorizontalAlignment="Left" Height="118" Margin="0,0,-2,0" VerticalAlignment="Top" Width="196">
+                <TextBox x:Name="textBox1" Height="30" TextWrapping="Wrap" Text="127.0.0.1" Canvas.Top="25" Width="180"/>
+                <TextBox x:Name="textBox2" Height="30" TextWrapping="Wrap" Text="5115" Canvas.Top="80" Width="110"/>
+                <Label x:Name="label1" Content="服务器地址" Height="25" Width="91" FontSize="14"/>
+                <Label x:Name="label1_Copy" Content="端口" Height="25" Canvas.Top="55" Width="91" FontSize="14"/>
+                <Button x:Name="connect" Content="连接" Canvas.Left="115" Canvas.Top="79" Width="75" Click="connect_Click"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="本机状态" HorizontalAlignment="Left" Height="72" Margin="674,169,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="206" FontSize="18">
+            <Canvas HorizontalAlignment="Left" Margin="0,0,-12,-14" Width="206">
+                <RadioButton x:Name="radioButton" Content="请求连接" Click="radioButton_Click"/>
+                <RadioButton x:Name="radioButton1" Content="创建连接" Canvas.Top="27" Click="radioButton1_Click"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="groupBox2" Header="网络参数" HorizontalAlignment="Left" Height="99" Margin="674,389,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="206" FontSize="20">
+            <Canvas HorizontalAlignment="Left" Height="68" Margin="0,0,-2,0" VerticalAlignment="Top" Width="196">
+                <TextBox x:Name="textBox3" Height="30" TextWrapping="Wrap" Text="5115" Canvas.Top="30" Width="110"/>
+                <Label x:Name="label1_Copy1" Content="端口" Height="25" Width="91" FontSize="14"/>
+                <Button x:Name="found" Content="创建" Canvas.Left="115" Canvas.Top="29" Width="75" Click="found_Click"/>
+            </Canvas>
+        </GroupBox>
+
+
+    </Grid>
+</Window>
